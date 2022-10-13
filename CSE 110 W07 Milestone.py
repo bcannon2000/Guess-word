@@ -25,7 +25,7 @@ list_all_len = len(list_all) - 1
 
 
 def start_up():
-    string = ""
+    string = choose_answer_pool()
     y = 0
     word = ""
     for x in string:
@@ -66,7 +66,6 @@ def choose_answer_pool():
 
 
 def game(original, current_word):
-    letter = str("o")
     new_word = list(current_word)
     guess_count = 5
     guessed = ""
@@ -79,7 +78,7 @@ def game(original, current_word):
             print(f"You already guessed {letter}")
             guess_count -= 1
 
-        elif letter or letter.upper() in original:
+        elif letter in original or letter.upper() in original:
             print(f"Yes, {letter} is in the answer.")
             for x in original:
                 if x == letter:
